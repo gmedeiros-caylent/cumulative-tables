@@ -4,7 +4,8 @@ conn = duckdb.connect('duckdb.sql')
 sql = """
         SELECT * from team_won_cumulated
         where team = 'Brazil'
-        and snapshot_date in (select max(snapshot_date) from team_won_cumulated)
+        and
+        snapshot_date BETWEEN '2024-10-10' and '2024-10-15'  
 """
 
 
